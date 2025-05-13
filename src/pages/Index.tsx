@@ -8,12 +8,14 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import BonusSection from '@/components/BonusSection';
 import RegisterForm from '@/components/RegisterForm';
 import Footer from '@/components/Footer';
+import ParticlesBackground from '@/components/ParticlesBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <ParticlesBackground />
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         <Hero />
         <AboutSection />
         <BenefitsSection />
@@ -27,3 +29,4 @@ const Index = () => {
 };
 
 export default Index;
+

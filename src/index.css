@@ -5,14 +5,14 @@
 
 @layer base {
   :root {
-    --background: 220 33% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
     --primary: 250 84% 54%;
     --primary-foreground: 210 40% 98%;
@@ -20,8 +20,8 @@
     --secondary: 338 85% 60%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
     --accent: 42 100% 62%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -29,8 +29,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
     --ring: 250 84% 54%;
 
     --radius: 0.75rem;
@@ -72,6 +72,7 @@
   }
 }
 
+/* Animações para efeitos especiais */
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -84,6 +85,39 @@
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 1);
+  }
+}
+
+@keyframes particles-float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 @layer utilities {
   .bg-size-200 {
     background-size: 200% 200%;
@@ -92,4 +126,17 @@
   .animate-gradient {
     animation: gradient 8s ease infinite;
   }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-strong {
+    animation: pulse-glow 2s infinite;
+  }
+
+  .animate-particles {
+    animation: particles-float 3s ease-in-out infinite;
+  }
 }
+
