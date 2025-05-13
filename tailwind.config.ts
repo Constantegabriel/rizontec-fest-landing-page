@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				rizontec: {
+					blue: '#2563EB',
+					purple: '#8B5CF6',
+					red: '#EF4444',
+					green: '#10B981',
+					yellow: '#F59E0B',
+					dark: '#1E293B',
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 10px rgba(139, 92, 246, 0.5)',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						boxShadow: '0 0 20px rgba(139, 92, 246, 0.8)',
+						transform: 'scale(1.05)'
+					}
+				},
+				'bounce-sm': {
+					'0%, 100%': { 
+						transform: 'translateY(0)' 
+					},
+					'50%': { 
+						transform: 'translateY(-10px)' 
+					}
+				},
+				'fade-in-down': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(-20px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s infinite',
+				'bounce-sm': 'bounce-sm 2s infinite',
+				'fade-in-down': 'fade-in-down 0.7s ease-out'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'tech-pattern': "url('/placeholder.svg')",
 			}
 		}
 	},
