@@ -60,15 +60,15 @@
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-rizontec-purple to-rizontec-blue hover:from-rizontec-blue hover:to-rizontec-purple text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg;
+    @apply bg-gradient-to-r from-rizontec-purple to-rizontec-blue hover:from-rizontec-blue hover:to-rizontec-purple text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg;
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-2;
   }
 }
 
@@ -118,6 +118,26 @@
   }
 }
 
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @layer utilities {
   .bg-size-200 {
     background-size: 200% 200%;
@@ -138,5 +158,28 @@
   .animate-particles {
     animation: particles-float 3s ease-in-out infinite;
   }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease forwards;
+  }
+  
+  .animate-delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-delay-3 {
+    animation-delay: 0.6s;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-lg bg-black/20 border border-white/10;
+  }
 }
-

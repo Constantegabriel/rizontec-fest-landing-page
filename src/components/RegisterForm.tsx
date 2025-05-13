@@ -51,7 +51,7 @@ const RegisterForm: React.FC = () => {
   return (
     <section id="inscricao" className="py-20 bg-slate-900">
       <div className="section-container">
-        <div className="max-w-2xl mx-auto bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl border border-white/10 shadow-lg">
+        <div className="max-w-2xl mx-auto bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 shadow-lg transform transition-all duration-500 hover:shadow-purple-500/20">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4 text-white">
               Garanta sua vaga no <span className="text-gradient">Rizontec Fest</span>
@@ -71,7 +71,7 @@ const RegisterForm: React.FC = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Digite seu nome completo" 
                 required 
-                className="mt-1 bg-slate-700/50 border-white/10 text-white"
+                className="mt-1 bg-slate-700/50 border-white/10 text-white focus:ring-rizontec-purple focus:border-rizontec-purple transition-all duration-300"
               />
             </div>
             
@@ -84,7 +84,7 @@ const RegisterForm: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Digite seu melhor e-mail" 
                 required 
-                className="mt-1 bg-slate-700/50 border-white/10 text-white"
+                className="mt-1 bg-slate-700/50 border-white/10 text-white focus:ring-rizontec-purple focus:border-rizontec-purple transition-all duration-300"
               />
             </div>
             
@@ -96,7 +96,7 @@ const RegisterForm: React.FC = () => {
                 value={whatsapp}
                 onChange={(e) => setWhatsapp(e.target.value)}
                 placeholder="(00) 00000-0000" 
-                className="mt-1 bg-slate-700/50 border-white/10 text-white"
+                className="mt-1 bg-slate-700/50 border-white/10 text-white focus:ring-rizontec-purple focus:border-rizontec-purple transition-all duration-300"
               />
             </div>
             
@@ -108,20 +108,20 @@ const RegisterForm: React.FC = () => {
                 className="mt-1"
               />
               <Label htmlFor="terms" className="ml-2 text-sm text-gray-300">
-                Concordo em receber comunicações por e-mail e WhatsApp sobre o evento e aceito os termos de uso e política de privacidade. *
+                Concordo em receber comunicações sobre o evento e aceito os termos de uso *
               </Label>
             </div>
             
             <Button 
               type="submit" 
-              className="w-full btn-primary py-6" 
+              className="w-full btn-primary py-6 transform transition-all duration-300 hover:translate-y-[-4px]" 
               disabled={loading}
             >
-              {loading ? "Processando..." : "Reservar minha vaga gratuitamente"}
+              {loading ? "Processando..." : "Reservar minha vaga"}
             </Button>
             
             <p className="text-center text-sm text-gray-400 mt-4">
-              Suas informações estão seguras conosco e não serão compartilhadas com terceiros.
+              Suas informações estão seguras conosco.
             </p>
           </form>
         </div>

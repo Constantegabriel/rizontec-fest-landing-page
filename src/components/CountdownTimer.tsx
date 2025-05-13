@@ -40,16 +40,18 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   }, [targetDate]);
 
   return (
-    <div className="p-6 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 shadow-xl">
+    <div className="p-6 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-lg rounded-2xl border border-white/10 shadow-xl transform transition-all duration-500 hover:shadow-purple-500/20">
       <div className="text-center mb-4">
         <h2 className="text-2xl font-bold text-white">O evento começa em:</h2>
       </div>
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {Object.entries(timeLeft).map(([unit, value]) => (
-          <div key={unit} className="flex flex-col items-center">
-            <div className="w-full aspect-square bg-gradient-to-br from-rizontec-purple/20 to-rizontec-blue/20 rounded-lg flex items-center justify-center border border-white/10 shadow-lg">
-              <span className="text-3xl md:text-4xl font-bold text-white">
+          <div key={unit} className="flex flex-col items-center transform transition-all duration-300 hover:scale-105">
+            <div className="w-full aspect-square bg-gradient-to-br from-rizontec-purple/30 to-rizontec-blue/30 rounded-2xl flex items-center justify-center border border-white/10 shadow-lg relative overflow-hidden group">
+              {/* Animated background effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-rizontec-purple to-rizontec-blue opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <span className="text-3xl md:text-4xl font-bold text-white relative z-10">
                 {value.toString().padStart(2, '0')}
               </span>
             </div>
@@ -65,7 +67,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
           Data: 15 de junho de 2025 - 20h00 (Horário de Brasília)
         </p>
         <button 
-          className="mt-4 text-sm text-rizontec-purple hover:underline"
+          className="mt-4 text-sm text-rizontec-purple hover:underline transition-all duration-300 flex items-center mx-auto"
           onClick={() => {
             const event = {
               text: "Rizontec Fest - Evento Online Ao Vivo",
