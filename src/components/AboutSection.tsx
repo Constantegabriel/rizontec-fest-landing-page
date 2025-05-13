@@ -52,8 +52,8 @@ const AboutSection: React.FC = () => {
           </div>
           
           <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10 transform transition-all duration-500 hover:shadow-purple-500/20">
-            <h3 className="text-xl font-bold mb-4 text-white">O que você vai aprender?</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h3 className="text-xl font-bold mb-4 text-white text-left">O que você vai aprender?</h3>
+            <ul className="space-y-2 text-gray-300 text-left">
               {['Tendências tecnológicas para 2025', 'Desenvolvimento de soluções inovadoras', 'Estratégias para otimização de processos'].map((topic, index) => (
                 <li key={index} className="flex items-center">
                   <span className="text-rizontec-purple mr-2">→</span>
@@ -64,13 +64,15 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 border border-white/10 transform transition-all duration-300 hover:translate-y-[-4px]">
-              <CardContent className="p-4">
-                <div className="text-3xl mb-3">{feature.icon}</div>
-                <h4 className="text-lg font-semibold mb-1 text-white">{feature.title}</h4>
-                <p className="text-gray-300 text-sm">{feature.description}</p>
+            <Card key={index} className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 border border-white/10 rounded-xl transform transition-all duration-300 hover:translate-y-[-4px]">
+              <CardContent className="p-5 flex items-center gap-4">
+                <div className="text-3xl p-3 bg-gradient-to-br from-slate-700/30 to-slate-800/30 rounded-full flex items-center justify-center min-w-12 h-12">{feature.icon}</div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-1 text-white">{feature.title}</h4>
+                  <p className="text-gray-300 text-sm">{feature.description}</p>
+                </div>
               </CardContent>
             </Card>
           ))}

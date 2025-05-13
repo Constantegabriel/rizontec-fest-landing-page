@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 const RegisterForm: React.FC = () => {
   const [name, setName] = useState('');
@@ -51,7 +51,7 @@ const RegisterForm: React.FC = () => {
   return (
     <section id="inscricao" className="py-20 bg-slate-900">
       <div className="section-container">
-        <div className="max-w-2xl mx-auto bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 shadow-lg transform transition-all duration-500 hover:shadow-purple-500/20">
+        <div className="max-w-2xl mx-auto bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/10 shadow-lg transform transition-all duration-500 hover:shadow-purple-500/20">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4 text-white">
               Garanta sua vaga no <span className="text-gradient">Rizontec Fest</span>
@@ -114,7 +114,7 @@ const RegisterForm: React.FC = () => {
             
             <Button 
               type="submit" 
-              className="w-full btn-primary py-6 transform transition-all duration-300 hover:translate-y-[-4px]" 
+              className="w-full sm:w-auto mx-auto block text-center btn-primary py-3 px-6 transform transition-all duration-300 hover:translate-y-[-4px]" 
               disabled={loading}
             >
               {loading ? "Processando..." : "Reservar minha vaga"}

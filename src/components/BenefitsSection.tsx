@@ -36,15 +36,19 @@ const BenefitsSection: React.FC = () => {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
               className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 p-6 rounded-2xl shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border border-white/10 backdrop-blur-sm"
             >
-              <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h4 className="text-xl font-semibold mb-2 text-white">{benefit.title}</h4>
-              <p className="text-gray-300">{benefit.description}</p>
+              <div className="flex items-center gap-4">
+                <div className="text-3xl p-3 bg-gradient-to-br from-slate-700/30 to-slate-800/30 rounded-full min-w-12 h-12 flex items-center justify-center">{benefit.icon}</div>
+                <div>
+                  <h4 className="text-xl font-semibold mb-2 text-white">{benefit.title}</h4>
+                  <p className="text-gray-300 text-sm">{benefit.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -52,9 +56,9 @@ const BenefitsSection: React.FC = () => {
         <div className="text-center mt-10">
           <Button 
             size="lg" 
-            className="btn-primary animate-pulse-glow group transform transition-all duration-300 hover:translate-y-[-4px]"
+            className="btn-primary animate-pulse-glow group transform transition-all duration-300 hover:translate-y-[-4px] w-full sm:w-auto"
           >
-            <a href="#inscricao" className="text-lg flex items-center gap-2">
+            <a href="#inscricao" className="text-lg flex items-center gap-2 justify-center">
               Quero garantir minha vaga
               <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>

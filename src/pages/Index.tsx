@@ -12,10 +12,10 @@ import ParticlesBackground from '@/components/ParticlesBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-screen flex flex-col relative bg-slate-900">
       <ParticlesBackground />
       <Header />
-      <main className="flex-grow relative z-10">
+      <main className="flex-grow relative z-10 overflow-x-hidden w-full">
         <Hero />
         <AboutSection />
         <BenefitsSection />
