@@ -26,13 +26,13 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section id="depoimentos" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="depoimentos" className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             O que dizem nossos <span className="text-gradient">participantes</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Veja o impacto do Rizontec Fest na vida de quem já participou
           </p>
         </div>
@@ -41,7 +41,7 @@ const TestimonialsSection: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
-              className="p-6 h-full flex flex-col card-hover"
+              className="p-6 h-full flex flex-col card-hover bg-slate-800/50 backdrop-blur-sm border border-white/10"
             >
               <div className="flex items-center mb-4">
                 <Avatar className="h-12 w-12 mr-4">
@@ -50,12 +50,12 @@ const TestimonialsSection: React.FC = () => {
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-300">{testimonial.role}</p>
                 </div>
               </div>
               <div className="flex-1">
-                <p className="text-gray-700 italic">"{testimonial.message}"</p>
+                <p className="text-gray-300 italic">"{testimonial.message}"</p>
               </div>
               <div className="mt-4 flex">
                 {[1, 2, 3, 4, 5].map((star) => (

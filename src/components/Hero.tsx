@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
               <Button size="lg" className="btn-primary animate-pulse-strong w-full sm:w-auto">
-                <a href="#inscricao" className="text-lg px-8 py-2">Garantir minha vaga</a>
+                <a href="#inscricao" className="text-lg px-4 py-2 block w-full">Garantir minha vaga</a>
               </Button>
               <span className="text-white">Vagas limitadas!</span>
             </div>

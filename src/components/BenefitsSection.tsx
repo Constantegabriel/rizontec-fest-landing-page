@@ -37,13 +37,13 @@ const BenefitsSection: React.FC = () => {
   ];
 
   return (
-    <section id="beneficios" className="py-20 bg-gray-50">
+    <section id="beneficios" className="py-20 bg-slate-800">
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Por que participar do <span className="text-gradient">Rizontec Fest</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Uma experiência completa que vai transformar sua visão sobre tecnologia e inovação
           </p>
         </div>
@@ -52,18 +52,18 @@ const BenefitsSection: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100"
+              className="bg-slate-700/30 p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-white/10 backdrop-blur-sm"
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h4 className="text-xl font-semibold mb-2">{benefit.title}</h4>
-              <p className="text-gray-600">{benefit.description}</p>
+              <h4 className="text-xl font-semibold mb-2 text-white">{benefit.title}</h4>
+              <p className="text-gray-300">{benefit.description}</p>
             </div>
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <Button size="lg" className="btn-primary animate-pulse-glow">
-            <a href="#inscricao" className="text-lg px-8 py-2">Quero garantir esses benefícios</a>
+          <Button size="lg" className="btn-primary animate-pulse-glow w-full sm:w-auto px-8 py-3">
+            <a href="#inscricao" className="text-lg">Quero garantir esses benefícios</a>
           </Button>
         </div>
       </div>
