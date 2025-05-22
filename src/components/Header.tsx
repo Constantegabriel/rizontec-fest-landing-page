@@ -25,8 +25,15 @@ const Header: React.FC = () => {
         setScrolled(false);
       }
       
-      // Set visibility based on scroll direction
-      setVisible(isScrollingUp || currentScrollPos < 10);
+      // Set visibility based on scroll direction - only change if there's a significant scroll
+      if (Math.abs(prevScrollPos - currentScrollPos) > 10) {
+        setVisible(isScrollingUp);
+      }
+      
+      // Always show navbar at the top of the page
+      if (currentScrollPos < 50) {
+        setVisible(true);
+      }
       
       // Save current scroll position for next comparison
       setPrevScrollPos(currentScrollPos);
@@ -46,7 +53,7 @@ const Header: React.FC = () => {
     <header 
       className={`py-3 sticky top-0 z-50 transition-all duration-300 
         ${scrolled ? 'bg-slate-900/90 backdrop-blur-lg shadow-md border-b border-border' : 'bg-transparent'} 
-        ${visible ? 'transform-none' : '-translate-y-full'}`}
+        ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center">
