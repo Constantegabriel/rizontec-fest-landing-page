@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -188,7 +189,7 @@
   }
 }
 
-// Make buttons more responsive on mobile
+/* Make buttons more responsive on mobile */
 @media (max-width: 640px) {
   .btn-primary {
     @apply w-full px-4 py-2 text-sm;
