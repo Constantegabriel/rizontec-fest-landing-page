@@ -35,9 +35,14 @@ const RegisterForm: React.FC = () => {
         description: "Você receberá as informações de acesso por e-mail.",
       });
       
-      // Redirecionar para WhatsApp ou Telegram
-      const whatsappLink = `https://wa.me/5511999999999?text=Olá! Acabei de me inscrever no Rizontec Fest. Meu nome é ${name} e meu email é ${email}`;
+      // Redirecionar para WhatsApp com o número correto
+      const whatsappLink = `https://wa.me/5548998143419?text=Olá! Acabei de me inscrever no Rizontec Fest. Meu nome é ${name} e meu email é ${email}`;
       window.open(whatsappLink, '_blank');
+      
+      // Abrir Instagram em uma nova aba
+      setTimeout(() => {
+        window.open('https://instagram.com/rizontec', '_blank');
+      }, 500);
       
       // Reset do formulário
       setName('');
