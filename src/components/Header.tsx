@@ -7,29 +7,47 @@ import { Menu, X } from 'lucide-react';
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const isMobile = useIsMobile();
   
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      const currentScrollPos = window.scrollY;
+      
+      // Determine if we're scrolling up
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+      
+      // Set scrolled state based on scroll position
+      if (currentScrollPos > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+      
+      // Set visibility based on scroll direction
+      setVisible(isScrollingUp || currentScrollPos < 10);
+      
+      // Save current scroll position for next comparison
+      setPrevScrollPos(currentScrollPos);
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [prevScrollPos]);
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
   
   return (
-    <header className={`py-3 sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/90 backdrop-blur-lg shadow-md border-b border-border' : 'bg-transparent'}`}>
+    <header 
+      className={`py-3 sticky top-0 z-50 transition-all duration-300 
+        ${scrolled ? 'bg-slate-900/90 backdrop-blur-lg shadow-md border-b border-border' : 'bg-transparent'} 
+        ${visible ? 'transform-none' : '-translate-y-full'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold text-gradient">Rizontec Fest</h1>
