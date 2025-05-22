@@ -39,7 +39,8 @@ const RegisterForm: React.FC = () => {
       const whatsappLink = `https://wa.me/5548998143419?text=Olá! Acabei de me inscrever no Rizontec Fest. Meu nome é ${name} e meu email é ${email}`;
       window.open(whatsappLink, '_blank');
       
-      // Reset do formulário 
+
+      // Reset do formulário
       setName('');
       setEmail('');
       setWhatsapp('');
