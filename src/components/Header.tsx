@@ -66,18 +66,20 @@ const Header: React.FC = () => {
         </div>
       </div>
       
-      {/* Mobile menu dropdown */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${mobileMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="px-4 py-3 space-y-3 bg-slate-900/90 backdrop-blur-lg border-t border-border">
-          <a href="#sobre" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Sobre</a>
-          <a href="#beneficios" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Benefícios</a>
-          <a href="#depoimentos" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Depoimentos</a>
-          <a href="#bonus" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Bônus</a>
-          <Button className="btn-primary w-full" asChild>
-            <a href="#inscricao" onClick={() => setMobileMenuOpen(false)}>Participar</a>
-          </Button>
+      {/* Mobile menu dropdown - Fixed the positioning and overflow issues */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed left-0 right-0 top-[61px] bg-slate-900/95 backdrop-blur-lg border-t border-border shadow-lg z-50">
+          <div className="px-4 py-3 space-y-3">
+            <a href="#sobre" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Sobre</a>
+            <a href="#beneficios" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Benefícios</a>
+            <a href="#depoimentos" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Depoimentos</a>
+            <a href="#bonus" className="block text-foreground/80 hover:text-rizontec-purple transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Bônus</a>
+            <Button className="btn-primary w-full" asChild>
+              <a href="#inscricao" onClick={() => setMobileMenuOpen(false)}>Participar</a>
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };
