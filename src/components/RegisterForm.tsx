@@ -36,7 +36,7 @@ const RegisterForm: React.FC = () => {
       });
       
       // Redirecionar para WhatsApp ou Telegram
-      const whatsappLink = `https://wa.me/5511999999999?text=Olá! Acabei de me inscrever no Rizontec Fest. Meu nome é ${name} e meu email é ${email}`;
+      const whatsappLink = `https://wa.me/5548998143419?text=Olá! Acabei de me inscrever no Rizontec Fest. Meu nome é ${name} e meu email é ${email}`;
       window.open(whatsappLink, '_blank');
       
       // Reset do formulário
